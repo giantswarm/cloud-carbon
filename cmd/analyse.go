@@ -12,8 +12,8 @@ import (
 	"time"
 
 	"github.com/giantswarm/cloud-carbon/pkg/footprint"
-	"github.com/olekukonko/tablewriter"
 
+	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/cobra"
 )
 
@@ -32,8 +32,6 @@ As a result, the EC2 usage by region and instance will be printed.
 }
 
 const (
-	headerBillingPeriodEndDate   = "bill/BillingPeriodEndDate"
-	headerBillingPeriodStartDate = "bill/BillingPeriodStartDate"
 	headerBillPayerAccountID     = "bill/PayerAccountId"
 	headerIdentityTimeInterval   = "identity/TimeInterval"
 	headerLineItemLineItemType   = "lineItem/LineItemType"

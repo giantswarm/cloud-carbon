@@ -1,6 +1,6 @@
 module github.com/giantswarm/cloud-carbon
 
-go 1.19
+go 1.18
 
 require (
 	github.com/olekukonko/tablewriter v0.0.5
