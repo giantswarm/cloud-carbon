@@ -32,8 +32,6 @@ As a result, the EC2 usage by region and instance will be printed.
 }
 
 const (
-	headerBillingPeriodEndDate   = "bill/BillingPeriodEndDate"
-	headerBillingPeriodStartDate = "bill/BillingPeriodStartDate"
 	headerBillPayerAccountID     = "bill/PayerAccountId"
 	headerIdentityTimeInterval   = "identity/TimeInterval"
 	headerLineItemLineItemType   = "lineItem/LineItemType"
