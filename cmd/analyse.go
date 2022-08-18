@@ -12,8 +12,8 @@ import (
 	"time"
 
 	"github.com/giantswarm/cloud-carbon/pkg/footprint"
-	"github.com/olekukonko/tablewriter"
 
+	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/cobra"
 )
 
