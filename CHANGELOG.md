@@ -11,4 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First working application and documentation
 
+### Changed
+
+- Changed Go version from 1.19 to 1.18 to be compatible with CI.
+
 [Unreleased]: https://github.com/giantswarm/cloud-carbon/tree/main
