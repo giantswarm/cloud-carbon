@@ -1,4 +1,4 @@
-![gs-we-are-hiring-1128x191px-v3](https://user-images.githubusercontent.com/273727/185643314-9ff1e016-35de-4f47-b08e-6aad9777e8ba.svg)
+[![We are hiring](https://user-images.githubusercontent.com/273727/185643314-9ff1e016-35de-4f47-b08e-6aad9777e8ba.svg)](https://www.giantswarm.io/careers#open-positions)
 
 # cloud-carbon
 
