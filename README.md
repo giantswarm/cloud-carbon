@@ -7,7 +7,7 @@ AWS EC2 usage.
 
 ## Requirements
 
-This tool needs an [AWS Cost and Usage Report](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html) as input. These reports are delivered automatically into an S3 bucket. Usually they cover usage of (up to) one calendar month.
+This tool needs an [AWS Cost and Usage Report](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html) as input. These reports are delivered automatically into an S3 bucket. Usually they cover usage of (up to) one calendar month. Time resolution (hourly, daily, monthly) should not make a difference, both hourly and daily have been confirmed to work fine.
 
 One such report is required to be accessible, e. g. downloaded to the local hard drive. The file is expected to be a gzip compressed comma-separated value (CSV) file.
 
@@ -28,24 +28,24 @@ cloud-carbon analyse PATH
 where `PATH` must be replaced with the path to the actual CSV file (gzip compressed). As a result, something like this will get printed:
 
 ```nohighlight
-Analysing report from path ./hourly-report-without-ids-00001.csv.gz
-Processed 18162 lines about EC2 usage.
-Time range covered: 2022-08-01 00:00:00 +0000 UTC - 2022-08-18 04:00:00 +0000 UTC (412h0m0s).
+Analysing report from path ./daily-without-ids-00001.csv.gz
+Processed 723 lines about EC2 usage.
+Time range covered: 2022-08-01 00:00:00 +0000 UTC - 2022-08-22 00:00:00 +0000 UTC (504h0m0s).
 
   REGION        INSTANCE TYPE  DURATION   EMISSIONS
-  eu-central-1  m4.xlarge      1664h0m0s  18.0 kgCO2e
-  eu-central-1  m5.xlarge      5836h0m0s  77.8 kgCO2e
-  eu-central-1  t3.large       1236h0m0s  8.3 kgCO2e
-  eu-central-1  t3.micro       412h0m0s   2.0 kgCO2e
-  eu-central-1  t3.small       11h0m0s    57 gCO2e
-  eu-west-1     m5.xlarge      3468h0m0s  43.7 kgCO2e
-  eu-west-1     t2.medium      412h0m0s   2.4 kgCO2e
-  eu-west-1     t2.micro       1236h0m0s  3.4 kgCO2e
-  eu-west-1     t3.small       1343h0m0s  6.6 kgCO2e
-  eu-west-2     m5.xlarge      2293h0m0s  22.0 kgCO2e
-  eu-west-2     t3.small       251h0m0s   965 gCO2e
+  eu-central-1  m4.xlarge      648h0m0s   7.0 kgCO2e
+  eu-central-1  m5.xlarge      4992h0m0s  66.6 kgCO2e
+  eu-central-1  t3.large       504h0m0s   3.4 kgCO2e
+  eu-central-1  t3.micro       504h0m0s   2.5 kgCO2e
+  eu-central-1  t3.small       72h0m0s    376 gCO2e
+  eu-west-1     m5.xlarge      4992h0m0s  62.9 kgCO2e
+  eu-west-1     t2.medium      504h0m0s   3.0 kgCO2e
+  eu-west-1     t2.micro       1008h0m0s  2.8 kgCO2e
+  eu-west-1     t3.small       2136h0m0s  10.6 kgCO2e
+  eu-west-2     m5.xlarge      1512h0m0s  14.5 kgCO2e
+  eu-west-2     t3.small       480h0m0s   1.8 kgCO2e
 
-                                 TOTAL      185.4 KGCO2E
+                                 TOTAL      175.4 KGCO2E
 ```
 
 ## What you get as a result
