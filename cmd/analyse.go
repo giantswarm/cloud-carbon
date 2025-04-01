@@ -7,6 +7,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"path/filepath"
 	"sort"
 	"strings"
 	"time"
@@ -107,17 +108,18 @@ func analyse(cmd *cobra.Command, args []string) {
 	path := args[0]
 	fmt.Printf("Analysing report from path %s\n", path)
 
+	path = filepath.Clean(path)
 	gzFile, err := os.Open(path)
 	if err != nil {
 		log.Fatalf("Could not open file: %s", err)
 	}
-	defer gzFile.Close()
+	defer func() { _ = gzFile.Close() }()
 
 	csvFile, err := gzip.NewReader(gzFile)
 	if err != nil {
 		log.Fatalf("Could not uncompress file: %s", err)
 	}
-	defer csvFile.Close()
+	defer func() { _ = csvFile.Close() }()
 
 	processedHeaders := false
 	lineCount := 0
