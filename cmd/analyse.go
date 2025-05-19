@@ -15,6 +15,7 @@ import (
 	"github.com/giantswarm/cloud-carbon/pkg/footprint"
 
 	"github.com/olekukonko/tablewriter"
+	"github.com/olekukonko/tablewriter/tw"
 	"github.com/spf13/cobra"
 )
 
@@ -190,8 +191,10 @@ func analyse(cmd *cobra.Command, args []string) {
 	fmt.Printf("Processed %d lines about EC2 usage.\n", lineCount)
 	fmt.Printf("Time range covered: %s - %s (%s).\n\n", earliestDate, latestDate, latestDate.Sub(earliestDate))
 
-	table := tablewriter.NewWriter(os.Stdout)
-	table.SetHeader([]string{"Region", "Instance type", "Duration", "Emissions"})
+	table := tablewriter.NewTable(os.Stdout,
+		tablewriter.WithHeaderAlignment(tw.AlignLeft),
+	)
+	table.Header([]string{"Region", "Instance type", "Duration", "Emissions"})
 
 	var aggregateReportRows []AggregateReportRow
 	var total float64
@@ -229,14 +232,6 @@ func analyse(cmd *cobra.Command, args []string) {
 		})
 	}
 
-	table.SetFooter([]string{"", "", "Total", formatGrams(total)})
-	table.SetHeaderAlignment(tablewriter.ALIGN_LEFT)
-	table.SetFooterAlignment(tablewriter.ALIGN_LEFT)
-	table.SetHeaderLine(false)
-	table.SetColumnSeparator("")
-	table.SetCenterSeparator("")
-	table.SetRowSeparator("")
-	table.SetBorder(false)
-	table.SetTablePadding("   ")
+	table.Footer([]string{"", "", "Total", formatGrams(total)})
 	table.Render()
 }
