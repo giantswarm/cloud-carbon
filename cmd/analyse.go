@@ -224,14 +224,20 @@ func analyse(cmd *cobra.Command, args []string) {
 	})
 
 	for _, row := range aggregateReportRows {
-		table.Append([]string{
+		err = table.Append([]string{
 			row.Region,
 			row.InstanceType,
 			row.Duration.String(),
 			formatGrams(row.EmissionGrams),
 		})
+		if err != nil {
+			log.Printf("Error appending row to table: %s", err)
+		}
 	}
 
 	table.Footer([]string{"", "", "Total", formatGrams(total)})
-	table.Render()
+	err = table.Render()
+	if err != nil {
+		log.Fatalf("Error rendering table: %s", err)
+	}
 }
