@@ -2,7 +2,7 @@ module github.com/giantswarm/cloud-carbon
 
 go 1.21
 
-toolchain go1.24.3
+toolchain go1.24.4
 
 require (
 	github.com/olekukonko/tablewriter v1.0.7
