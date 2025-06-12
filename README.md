@@ -9,7 +9,7 @@ This tool needs an [AWS Cost and Usage Report](https://docs.aws.amazon.com/cur/l
 
 One such report is required to be accessible, e. g. downloaded to the local hard drive. The file is expected to be a gzip compressed comma-separated value (CSV) file.
 
-If you don't have Cost and Usage Reports configured, please check the [AWS documtation](https://docs.aws.amazon.com/cur/latest/userguide/cur-create.html) regarding setting this up.
+If you don't have Cost and Usage Reports configured, please check the [AWS documentation](https://docs.aws.amazon.com/cur/latest/userguide/cur-create.html) regarding setting this up.
 
 ## Installation
 
